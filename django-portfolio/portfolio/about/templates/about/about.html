@@ -1,0 +1,50 @@
+<!-- about/about.html -->
+{% extends 'base_menu.html' %}
+
+{% block title %}
+  Portfolio - About Me
+{% endblock %}
+
+{% load static %}
+
+{% block head %}
+    <link href="{% static 'about/css/about.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-center text-inline">About Me</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container-lg d-none d-lg-block">
+        <h2 class="text-center text-info-emphasis mb-4">About Me</h2>
+    </div>
+    <!-- Flip Card Section -->
+    <section class="about-section bg-dark">
+        <div class="container card-container bg-info-subtle border border-info-subtle rounded-5 text-center">
+            <div class="container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <!-- Front content: Image and Title -->
+                            <img src="{% static 'images/alex.png' %}" alt="My Photo" class="about-section-image">
+                        </div>
+                        <div class="flip-card-back">
+                            <!-- Back content: About Me Text -->
+                            <p class="about-content text-info-emphasis">
+                                Hello! My name is Alexander N. Shelton. I'm a passionate developer with a Bachelor's of Information Technology in Software Development.
+                            <br>
+                                My primary programming language is Python with experience using Django, Bootstrap, and various other programming languages.
+                            <br>
+                                My goal is to contribute my programming skills and technological knowledge to solving real-world problems.
+                            <br><br>
+                                In my spare time, I enjoy learning new programming languages, exploring new technologies, and contributing to open-source projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container seperator-container"></div>
+{% endblock %}

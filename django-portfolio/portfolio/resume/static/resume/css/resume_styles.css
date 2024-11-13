@@ -1,0 +1,104 @@
+/* css/resume_styles.css */
+
+.resume-item p {
+    color: #00d5ff;
+}
+
+.resume-item small {
+    font-size: 1rem;
+    color: #00d5ff;
+}
+
+.resume-item {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem #3e0057;
+}
+
+.resume-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+    .list-unstyled {
+        line-height: 35px;
+    }
+}
+
+.strong-skills {
+    color: purple;
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.75rem;
+    text-decoration-color: #00d5ff;
+}
+
+.em-skills {
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.75rem;
+    text-decoration-color: #800080;
+}
+
+/* Regular button style */
+.custom-btn {
+    background-color: #3e0057; 
+    color: #00d5ff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Button text content */
+.custom-btn::after {
+    content: "You won't regret it!";
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #3e0057; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Hide original text and show new text on hover */
+.custom-btn:hover {
+    background-color: #00d5ff;
+    color: transparent; 
+}
+
+.custom-btn:hover::after {
+    opacity: 1; 
+}
+
+
+.resume-container {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem #52bacc;
+}
+
+.resume-section {
+    padding: 0.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem #3e0057;
+}
+
+.skills-row  {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem #3e0057;
+}
+.seperator-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}

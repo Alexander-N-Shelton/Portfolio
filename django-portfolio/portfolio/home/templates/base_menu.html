@@ -1,0 +1,209 @@
+<!-- home/base_menu.html -->
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="{% static '/images/favicons/apple-touch-icon.png' %}" sizes="180x180">
+  <link rel="icon" href="{% static '/images/favicons/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+  <link rel="icon" href="{% static '/images/favicons/favicon-16x16.png' %}" sizes="16x16" type="image/png">
+  <link rel="icon" href="{% static '/images/favicons/favicon.ico' %}">
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'css/menu_styles.css' %}" rel="stylesheet">
+{% block head %} {% endblock %}
+</head>
+<body>
+<!-- Top Navbar for small screens -->
+  <div class="top-navbar bg-info-subtle mb-5" id="toggle-nav">
+    <div class="row">
+      <div class="col-1 pt-2">
+        <button class="btn toggle-btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+          <svg class="bi bi-menu-button-wide-fill" width="30" height="30" fill="currentColor">
+            <use href="{% static 'icons/grid-fill.svg' %}#menu"/>
+          </svg>
+        </button>
+      </div>
+      <div class="col-10">
+        <p>{% block header %}{% endblock %}</p>
+      </div>
+      <div class="col-1"></div>
+      <span class="ms-3"></span>
+    </div>
+  </div>
+
+<!-- Sidebar for large screens -->
+<header id="header">
+  <div class="d-flex flex-column">
+    <nav class="sidebar bg-info-subtle d-none d-lg-block">
+      <div class="profile">
+        <img src="{% static 'images/alex.png' %}" alt="" class="img-fluid rounded-circle mb-4">
+        <h1 class="text-info-emphasis text-center">Alexander N. Shelton</h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/alexandernathanshelton/" class="btn btn-outline-info">
+            <svg class="bi bi-linkedin" width="25" height="25" fill="currentColor">
+              <use href="{% static 'icons/linkedin.svg' %}#linkedin"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Alexander-N-Shelton" class="btn btn-outline-info">
+            <svg class="bi bi-github" width="25" height="25" fill="currentColor">
+              <use href="{% static 'icons/github.svg' %}#github"/>
+            </svg>
+          </a>
+          <a href="https://stackoverflow.com/" class="btn btn-outline-info">
+            <svg class="bi bi-stack-overflow" width="25" height="25" fill="currentColor">
+              <use href="{% static 'icons/stack-overflow.svg' %}#stack-overflow"/>
+            </svg>
+          </a>
+          <a href="https://alexandernshelton.wordpress.com/" class="btn btn-outline-info">
+            <svg class="bi bi-wordpress" width="25" height="25" fill="currentColor">
+              <use href="{% static 'icons/word-press.svg' %}#word-press"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Menu for Large Screens -->
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          {% url 'home' as home_link %}
+          <a href="{% url 'home' %} " class="nav-link {% if request.get_full_path == home_link %}active{% endif %}">
+            <svg class="bi bi-house-fill me-2" width="30" height="30" fill="currentColor">
+              <use href="{% static 'icons/home.svg' %}#home"/>
+            </svg>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          {% url 'about' as about_link %}
+          <a href="{% url 'about' %}" class="nav-link {% if request.get_full_path == about_link %}active{% endif %}">
+            <svg class="bi pe-none me-2" width="30" height="30" fill="currentColor">
+              <use href="{% static 'icons/about.svg' %}#about"/>
+            </svg>
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          {% url 'resume' as resume_link %}
+          <a href="{% url 'resume' %}" class="nav-link {% if request.get_full_path == resume_link %}active{% endif %}">
+            <svg class="bi pe-none me-2" width="30" height="30" fill="currentColor">
+              <use href="{% static 'icons/resume.svg' %}#resume"/>
+            </svg>
+            Resume
+          </a>
+        </li>
+        <li class="nav-item">
+          {% url 'skills' as skills_link %}
+          <a href="{% url 'skills' %}" class="nav-link {% if request.get_full_path == skills_link %}active {% endif %}">
+            <svg class="bi pe-none me-2" width="30" height="30" fill="currentColor">
+              <use href="{% static 'icons/code.svg' %}#code"/>
+            </svg>
+            Skills
+          </a>
+        </li>
+        <li class="nav-item">
+          {% url 'projects' as projects_link %}
+          <a href="{% url 'projects' %}" class="nav-link {% if request.get_full_path == projects_link %}active{% endif %}">
+            <svg class="bi pe-none me-2" width="30" height="30" fill="currentColor">
+              <use href="{% static 'icons/journal-code.svg' %}#journal-code"/>
+            </svg>
+            Projects
+          </a>
+        </li>
+        <li class="nav-item">
+          {% url 'contact' as contact_link %}
+          <a href="{% url 'contact' %}" class="nav-link {% if request.get_full_path == contact_link %}active{% endif %}">
+            <svg class="bi pe-none me-2" width="30" height="30" fill="currentColor">
+              <use href="{% static 'icons/envelope-paper.svg' %}#envelope-paper"/>
+            </svg>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- Offcanvas sidebar for small screens -->
+<div class="offcanvas offcanvas-start bg-info-subtle border border-info-subtle rounded-3" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel" style="width: 150px;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-info" id="offcanvasSidebarLabel">Menu</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        {% url 'home' as home_link %}
+        <a href="{% url 'home' %}" class="nav-link w-100 d-flex justify-content-center {% if request.get_full_path == home_link %}active{% endif %}" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+          <!-- Show only the icon on small screens -->
+          <svg class="bi bi-house-fill" width="40  " height="40" fill="currentColor" aria-label="Home">
+            <use href="{% static 'icons/home.svg' %}#home"/>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-item">
+        {% url 'about' as about_link %}
+        <a href="{% url 'about' %}" class="nav-link w-100 d-flex justify-content-center {% if request.get_full_path == about_link %}active{% endif %}" title="About" data-bs-toggle="tooltip" data-bs-placement="right">
+          <svg class="bi bi-person-rolodex" width="40" height="40" fill="currentColor" aria-label="About">
+            <use href="{% static 'icons/about.svg' %}#about"/>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-item">
+        {% url 'resume' as resume_link %}
+        <a href="{% url 'resume' %}" class="nav-link w-100 d-flex justify-content-center {% if request.get_full_path == resume_link %}active{% endif %}" title="Resume" data-bs-toggle="tooltip" data-bs-placement="right">
+          <svg class="bi bi-card-checklist" width="40" height="40" fill="currentColor" aria-label="Resume">
+            <use href="{% static 'icons/resume.svg' %}#resume"/>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-item">
+        {% url 'skills' as skills_link %}
+        <a href="{% url 'skills' %}" class="nav-link w-100 d-flex justify-content-center {% if request.get_full_path == skills_link %}active {% endif %}" title="Skills" data-bs-toggle="tooltip" data-bs-placement="right">
+          <svg class="bi bi-code-square" width="40" height="40" fill="currentColor" aria-label="Skills">
+            <use href="{% static 'icons/code.svg' %}#code"/>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-item">
+        {% url 'projects' as projects_link %}
+        <a href="{% url 'projects' %}" class="nav-link w-100 d-flex justify-content-center {% if request.get_full_path == projects_link %}active{% endif %}" title="Projects" data-bs-toggle="tooltip" data-bs-placement="right">
+          <svg class="bi bi-journal-code" width="40" height="40" fill="currentColor" aria-label="Projects">
+            <use href="{% static 'icons/journal-code.svg' %}#journal-code"/>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-item">
+        {% url 'contact' as contact_link %}
+        <a href="{% url 'contact' %}" class="nav-link w-100 d-flex justify-content-center {% if request.get_full_path == contact_link %}active bg-primary{% endif %}" title="Contact" data-bs-toggle="tooltip" data-bs-placement="right">
+          <svg class="bi bi-envelope-paper" width="40" height="40" fill="currentColor" aria-label="Contact">
+            <use href="{% static 'icons/envelope-paper.svg' %}#envelope-paper"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="footer bg-info-subtle border border-info-subtle text-center py-3 rounded-3" style="color: #800080">
+    <div class="container">
+        <span>
+            Developed using Django | © 2024 Alexander N. Shelton | All Rights Reserved</span>
+    </div>
+</footer>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="container mt-5">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/sidebars.js' %}"></script>
+</body>
+</html>

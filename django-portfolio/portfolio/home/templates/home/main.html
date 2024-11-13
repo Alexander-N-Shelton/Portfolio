@@ -1,0 +1,44 @@
+{% extends 'base_menu.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link href="{% static 'css/home_styles.css' %}"  rel="stylesheet" >
+{% endblock %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block header %}
+  <h1 class="text-center text-info-emphasis text-inline">Home</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container-lg d-none d-lg-block">
+        <h2 class="text-center text-info-emphasis mb-4">Home</h2>
+    </div>
+    <section class="home-section bg-dark">
+        <div class="container home-container bg-info-subtle border border-info-subtle rounded-5 text-center">
+            <h3 class="text-info-emphasis">Alexander N. Shelton's Portfolio</h3>
+            <p class="text-info-emphasis welcome-text">
+                Welcome to my professional portfolio!<br>
+                <br>My name is Alexander N. Shelton<br>
+                I'm a driven learner with a goal to become a Software Developer and Pythonista.<br>
+                <br>Here you can explore my:</p>
+                <div class="pages-list">
+                    <ul class="text-info-emphasis">
+                        <li><a href="{% url 'about' %}">About Me</a></li>
+                        <li><a href="{% url 'resume' %}">Resume</a></li> 
+                        <li><a href="{% url 'skills' %}#skills">Skills</a></li>
+                        <li><a href="{% url 'skills' %}#certifications">Certifications</a></li>
+                        <li><a href="{% url 'projects' %}">Projects</a></li>
+                    </ul>
+                </div>
+                <p class="text-info-emphasis welcome-text">
+                    Please take a look around and let's connect if you're interested in collaborating on a project or to discuss potential opportunities.
+                </p>
+            </div>
+        </section>
+    <div class="container seperator-container"></div>
+{% endblock %}

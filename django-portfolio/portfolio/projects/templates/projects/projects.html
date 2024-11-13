@@ -1,0 +1,45 @@
+<!-- projects/projects.html -->
+{% extends 'base_menu.html' %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'projects/css/projects_styles.css' %}">
+{% endblock %}
+{% block title %}
+  Projects
+{% endblock %}
+{% block header %}
+    <h1 class="text-center text-info-emphasis text-inline">Projects</h1>
+{% endblock %}
+{% block content %}
+    <div class="container-lg d-none d-lg-block">
+        <h2 class="text-center text-info-emphasis mb-4">Projects</h2>
+    </div>
+        <section class="projects-section bg-info-subtle border border-info-subtle rounded-5 text-center">
+            <div class="container projects-container">
+                <div class="row projects-row">
+                    <!-- Loop through projects -->
+                    {% for project in projects %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ project.title }}</h4>
+                                    <p class="card-text">{{ project.description }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">
+                                        <strong>Technologies:</strong> {{ project.technologies }}
+                                    </small>
+                                    <a href="#" class="btn btn-primary btn-sm float-end" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                            <p>No projects available at the moment. Check back later!</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div class="container seperator-container"></div>
+{% endblock %}

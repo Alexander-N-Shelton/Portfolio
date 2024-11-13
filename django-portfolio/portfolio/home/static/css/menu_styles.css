@@ -1,0 +1,207 @@
+/* home/menu_styles.css */
+body {
+    padding-top: 2.5rem;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 0.75rem;
+    text-decoration-color: #007bff;
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 0.75rem;
+    text-decoration-color: #007bff;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 0.75rem;
+    text-decoration-color: #800080;
+}
+
+@media (max-width: 992px) {
+    h3 {
+        line-height: 50px;
+    }
+}
+
+h4 {
+    font-size: 20px;
+    color: #800080;
+}
+
+/* Sidebar styles for large screens */
+.sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px #52bacc;
+}
+
+/* Content padding for large screens */
+.content {
+    margin-left: 300px;
+    padding: 20px;
+}
+
+/* Hide the sidebar on smaller screens */
+@media (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+
+    /* Content takes full width on small screens */
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* Navbar container on small screens */
+.top-navbar {
+    display: none;
+    width: 100%;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px #52bacc;
+}
+
+@media (max-width: 992px) {
+    .top-navbar {
+        display: block;
+    }
+}
+
+.toggle-btn {
+    background-color: #3e0057;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    size: 2.5rem;
+}
+
+.toggle-btn:hover {
+    color: #3e0057;
+    background-color: #52bacc;
+}
+/* Header */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: all ease-in-out 0.5s;
+    z-index: 9997;
+    transition: all 0.5s;
+    padding: 0 15px;
+    overflow-y: auto;
+}
+
+#header .profile {
+    padding-bottom: 50px;
+}
+
+#header .profile img {
+    margin: 15px auto;
+    display: block;
+    width: 150px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px #52bacc;
+}
+
+#header .profile h1 {
+    font-size: 28px;
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#header .profile .social-links a {
+    display: inline-block;
+    background: #3e0057;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: 0.3s;
+}
+
+#header .profile .social-links a:hover {
+    color: #3e0057;
+    background-color: var(--bs-info) !important;
+}
+
+@media (max-width: 768px) {
+    #header .profile img {
+        width: 70px; /* Smaller size for smaller screens */
+    }
+}
+
+#main {
+    margin-left: 300px;
+  }
+
+  @media (max-width: 1199px) {
+    #header {
+      left: -300px;
+    }
+
+    #main {
+      margin-left: 0;
+    }
+  }
+
+
+/* Style for the active tab */
+.nav-link.active {
+    background-color: #52bacc !important;
+    color: #3e0057 !important;
+}
+
+.nav-link {
+    color: #52bacc
+}
+
+.footer {
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 60%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    width: 600px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #3e0057;
+}
+@media (max-width: 992px) {
+    .footer {
+        font-size: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 350px;
+    }
+}

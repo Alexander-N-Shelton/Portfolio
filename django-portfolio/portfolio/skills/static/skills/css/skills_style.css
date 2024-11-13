@@ -1,0 +1,99 @@
+/* css/skills_style.css */
+
+/* Skills section styling */
+.skills-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #00d5ff;
+    font-weight: 600;
+}
+
+/* Certification cards layout */
+.certification-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #800080;
+}
+
+/* Card container styling */
+.card-container {
+    flex: 1 1 30%;
+    max-width: 300px;
+    min-width: 250px;
+    margin-bottom: 20px;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem #3e0057;
+
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(121, 225, 243, 0.1);
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
+.card-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card-text {
+    font-size: 1rem;
+    text-align: center;
+    color: #00d5ff;
+}
+
+.certificate-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem #52bacc;
+}
+.skills-container{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem #52bacc;
+}
+
+.certificate-section {
+    padding: 0.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem #3e0057;
+}
+
+.skill-section {
+    padding: 0.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem #3e0057;
+}
+
+.seperator-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}

@@ -1,0 +1,88 @@
+<!-- skills/skills.html -->
+{% extends 'base_menu.html' %}
+
+{% load static %}
+
+{% block title %}
+    Skills & Certifications
+{% endblock %}
+
+{% block head %}
+    <link href="{% static 'skills/css/skills_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-center text-info-emphasis text-inline">Certifications & Skills</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container-lg d-none d-lg-block">
+        <h2 class="text-center text-info-emphasis mb-4">Certifcations & Skills</h2>
+    </div>
+    <!-- Certifications Section -->
+    <section class="certificate-section bg-dark" id="certifications">
+        <div class="container certificate-container bg-info-subtle border border-info-subtle rounded-5 text-center">
+            <h3 class="text-info-emphasis">Certifications</h2>
+            <div class="certification-cards">
+                <!-- CompTIA ITF+ -->
+                <div class="card-container">
+                    <div class="card bg-info-subtle">
+                        <img src="{% static 'skills/images/itf-plus-logo.png' %}" class="card-img-top" alt="CompTIA ITF+">
+                        <h5 class="card-title">CompTIA ITF+</h5>
+                        <p class="card-text">The CompTIA ITF+ certification covers fundamental IT concepts, database basics, software development, and infrastructure.</p>
+                    </div>
+                </div>
+                <!-- CompTIA A+ -->
+                <div class="card-container">
+                    <div class="card bg-info-subtle">
+                        <img src="{% static 'skills/images/a-plus.png' %}" class="card-img-top" alt="CompTIA A+">
+                        <h5 class="card-title">CompTIA A+</h5>
+                        <p class="card-text">The CompTIA A+ certification focuses on technical support and IT operational roles, covering hardware, software, and networking fundamentals.</p>
+                    </div>
+                </div>
+                <!-- CompTIA Cloud Essentials+ -->
+                <div class="card-container">
+                    <div class="card bg-info-subtle">
+                        <img src="{% static 'skills/images/cloud-essentials.png' %}" class="card-img-top" alt="CompTIA Cloud Essentials+">
+                        <h5 class="card-title">CompTIA Cloud Essentials+</h5>
+                        <p class="card-text">This certification validates knowledge of cloud services, including deployment models and the benefits of cloud computing.</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card bg-info-subtle">
+                        <img src="{% static 'skills/images/pcep.png' %}" class="card-img-top" alt="PCEP Python Certified Entry-Level Programmer">
+                        <h5 class="card-title">PCEP</h5>
+                        <p class="card-text">This certification validates entry-level knowledge of the Python Programming language.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container seperator-container"></div>
+    <!-- Skills Section -->
+    <section class="skill-section text-center bg-dark" id="skills">
+        <div class="container skills-container bg-info-subtle border border-info-subtle rounded-5 text-center">
+            <h3 class="text-info-emphasis">Skills</h3>
+            <div class="skills-list">
+                <ul>
+                    <li>Python (Primary Language)</li>
+                    <li>Django Framework</li>
+                    <li>Flask Framework</li>
+                    <li>REST APIs</li>
+                    <li>SQL & Databases (PostgreSQL, MySQL)</li>
+                    <li>JavaScript & Frontend (React, jQuery)</li>
+                    <li>Version Control (Git, GitHub)</li>
+                    <li>Cloud Computing (AWS, Azure)</li>
+                    <li>DevOps (Docker, CI/CD)</li>
+                    <li>Linux System Administration</li>
+                    <li>Shell Scripting</li>
+                    <li>Object-Oriented Programming (OOP)</li>
+                    <li>Agile Methodologies</li>
+                    <li>Unit Testing (PyTest, Unittest)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="container seperator-container"></div>
+{% endblock %}

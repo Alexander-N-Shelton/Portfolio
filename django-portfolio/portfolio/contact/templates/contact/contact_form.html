@@ -1,0 +1,110 @@
+<!-- contact/contact_form.html -->
+{% extends 'base_menu.html' %}
+
+{% block title %}
+    Contact Me
+{% endblock %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'contact/css/contact_styles.css' %}">
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-center text-info-emphasis text-inline">Contact Me</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container-lg d-none d-lg-block">
+    <h2 class="text-center text-info-emphasis mb-4">Contact Me</h2>
+</div>
+<div class="container text-center">
+    <section class="page-section">
+        <section class="contact-section">
+            <div class="container contact-container bg-info-subtle border border-info-subtle rounded-5 text-center">
+                <p class="question-text text-info-emphasis">Have any questions or want to get in touch? Drop me a message below!</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100 p-2">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display success or error messages -->
+            {% if messages %}
+                <div class="mb-4">
+                    {% for message in messages %}
+                        <!-- Check the message's tag and apply corresponding Bootstrap alert class -->
+                        {% if message.tags == 'success' %}
+                            <div class="alert alert-dark bg-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% elif message.tags == 'error' %}
+                            <div class="alert alert-dark bg-danger" role="alert">
+                                {{ message }}
+                            </div>
+                        {% else %}
+                            <div class="alert alert-light bg-warning" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </section>
+        <section class="link-section">
+            <!-- Social Media Links (Optional) -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6 link-div">
+                    <h5 class="text-info-emphasis">Or connect with me on social media:</h5>
+                        <ul class="list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/alexandernathanshelton/" class="btn btn-outline-info">
+                                    <svg class="bi bi-linkedin" width="25" height="25" fill="currentColor">
+                                        <use href="{% static 'icons/linkedin.svg' %}#linkedin"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/Alexander-N-Shelton" class="btn btn-outline-info">
+                                    <svg class="bi bi-github" width="25" height="25" fill="currentColor">
+                                        <use href="{% static 'icons/github.svg' %}#github"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://stackoverflow.com/" class="btn btn-outline-info">
+                                    <svg class="bi bi-stack-overflow" width="25" height="25" fill="currentColor">
+                                        <use href="{% static 'icons/stack-overflow.svg' %}#stack-overflow"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/" class="btn btn-outline-info" id="btn-link">
+                                    <svg class="bi bi-facebook" width="25" height="25" fill="currentColor">
+                                        <use href="{% static 'icons/facebook.svg' %}#facebook"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+<div class="container seperator-container"></div>
+{% endblock %}

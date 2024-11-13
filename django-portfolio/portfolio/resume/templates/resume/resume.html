@@ -1,0 +1,93 @@
+<!-- resume/resume.html -->
+{% extends 'base_menu.html' %}
+
+{% block title %}
+  Resume
+{% endblock %}
+
+{% load static %}
+
+{% block head %}
+  <link href="{% static 'resume/css/resume_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-center text-info-emphasis text-inline">Resume</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container-lg d-none d-lg-block">
+        <h2 class="text-center text-info-emphasis mb-4">Resume</h2>
+    </div>
+    <section class="resume-section bg-dark">
+        <div class="container resume-container bg-info-subtle border border-info-subtle rounded-5 text-center">
+            <div class="container">
+                <!-- Education -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 class="text-info-emphasis">Education</h3>
+                        <div class="resume-item mb-5">
+                            <h4>Bachelor of Science in Information Technology </h4>
+                            <p class="text-info-emphasis">
+                                <em>Purdue Global University - West Lafayette, IN</em>
+                            </p>
+                            <p>
+                                <small class="text-info-emphasis">November 2023 - May 2025</small>
+                            </p>
+                            <p class="text-info-emphasis">
+                                Graduated Magna Cum Laude, focusing on software development and Python.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience -->
+                    <div class="col-lg-6">
+                        <h3 class="text-info-emphasis">Work Experience</h3>
+                    <div class="resume-item mb-5">
+                        <h4>Whatever Position is Available</h4>
+                        <p class="text-info-emphasis">
+                            <em>Your Company</em>
+                        </p>
+                        <p>
+                            <small class="text-info-emphasis">Now - Future</small>
+                        </p>
+                        <p class="text-info-emphasis">
+                            Would be an incredible addition to your company. Don't have any work experience in IT, but I included some of my other previous jobs in the downloadable resume (They are also on my LinkedIn page).
+                        </p>
+                    </div>
+                </div>
+                <!-- Skills -->
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <h3 class="text-info-emphasis">Skills</h3>
+                        <div class="row skills-row text-left justify-content-center">
+                            <div class="col-md-4">
+                                <ul class="list-unstyled">
+                                    <li><strong class="strong-skills">Languages:</strong><em class="text-info-emphasis em-skills"> Python, JavaScript, HTML, CSS</em></li>
+                                    <li><strong class="strong-skills">Frameworks:</strong><em class="text-info-emphasis em-skills"> Django, React, Bootstrap</em></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-unstyled">
+                                    <li><strong class="strong-skills">Tools:</strong><em class="text-info-emphasis em-skills"> Git, Azure, AWS</em></li>
+                                    <li><strong class="strong-skills">Databases:</strong><em class="text-info-emphasis em-skills"> PostgreSQL, MySQL</em></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-unstyled">
+                                    <li><strong class="strong-skills">Other Skills:</strong><em class="text-info-emphasis em-skills"> Agile Methodologies, REST APIs</em></li>
+                                    <li><strong class="strong-skills">Soft Skills:</strong><em class="text-info-emphasis em-skills"> Team Leadership, Problem Solving</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="container mb-3">
+                <a href="{% static 'resume/pdf/alexander_shelton_resume.pdf' %}" class="btn btn-primary custom-btn mt-5" download>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="container seperator-container"></div>
+{% endblock %}
