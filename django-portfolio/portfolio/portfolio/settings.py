@@ -1,10 +1,11 @@
 #----- settings.py -----#
 from pathlib import Path
 import os
+import dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = dotenv.get_key('.env', 'SECRET_KEY')
 
 DEBUG = True
 
