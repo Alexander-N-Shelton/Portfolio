@@ -4,7 +4,7 @@ import os
 import dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# SECRET_KEY = os.getenv("SECRET_KEY")
 SECRET_KEY = dotenv.get_key('.env', 'SECRET_KEY')
 
 DEBUG = True
